@@ -1,0 +1,26 @@
+---
+name: librazer
+version: 0.1.0
+
+authors:
+  - Chris Watson <chris@marginzero.co>
+
+crystal: 0.23.0
+
+targets:
+  default:
+    main: src/librazer.cr
+    options:
+      - -o bin/librazer
+      - --release
+  devel:
+    main: src/librazer.cr
+    options:
+      - -o bin/librazer-dev
+
+dependencies:
+  dbus:
+    github: oprypin/crystal-dbus
+    branch: master
+
+license: MIT
