@@ -63,7 +63,7 @@ module Razer::Devices
         :lighting_starlight_random => has_feature("razer.device.lighting.chroma", "setStarlightRandom"),
 
         :lighting_ripple              => has_feature("razer.device.lighting.chroma", "setRipple"),
-        :lighting_ripple_random_color => has_feature("razer.device.lighting.chroma", "setRippleRandomColor"),
+        :lighting_ripple_random_color => has_feature("razer.device.lighting.chroma", "setRippleRandomColour"),
 
         :lighting_pulsate => has_feature("razer.device.lighting.chroma", "setPulsate"),
 
@@ -151,7 +151,7 @@ module Razer::Devices
 
     # Get device brightness
     def brightness
-      return @dbus_interfaces[:brightness].getBrightness.as(Float16)
+      return @dbus_interfaces[:brightness].getBrightness.as(Float)
     end
 
     # Set device brightness

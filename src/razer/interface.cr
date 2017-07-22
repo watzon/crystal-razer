@@ -15,7 +15,7 @@ module Razer
     end
 
     macro method_missing(call)
-        def {{call.name.id}}{% if call.args.size > 0 %}({{ *call.args.map { |x| "#{x.id}, ".id } }}){% end %}
+        def {{call.name.id}}{% if call.args.size > 0 %}({{ *call.args.map { |x| "#{x.id}".id } }}){% end %}
             res = interface.call("{{call.name.id}}"{% if call.args.size > 0 %}, {{call.args}}{% end %}).reply
             if res.is_a?(Array)
               if res.size == 1

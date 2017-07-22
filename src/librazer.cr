@@ -69,4 +69,6 @@ module Razer
   end
 end
 
-dm = Razer::DeviceManager.new
+# dm = Razer::DeviceManager.new
+# kb = dm.devices[0]
+# fx = Razer::RazerFX.new(kb.serial, kb.capabilities)
