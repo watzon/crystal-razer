@@ -27,17 +27,17 @@ pp dm.devices #=> [#<Razer::Devices::RazerKeyboard:0x561974a06f80 ...]
 kbd = dm.devices[0].as(Razer::Devices.Keyboard) # Not ideal having to use `.as()`, but it's all that works for now
 
 # List available features for the device
-pp kbd.get_available_features #=>   [#<Razer::Devices::RazerKeyboard:0x563b4e057f80
-                                        @available_features=
-                                           {"razer.device.misc" =>
-                                             ["getSerial",
-                                              "suspendDevice",
-                                              "getDeviceMode",
-                                              "getRazerUrls",
-                                              "setDeviceMode"
-                                              ...]
-                                           }
-                                    ]
+pp kbd.get_available_features   #=>     [#<Razer::Devices::RazerKeyboard:0x563b4e057f80
+                                #           @available_features=
+                                #              {"razer.device.misc" =>
+                                #                ["getSerial",
+                                #                 "suspendDevice",
+                                #                 "getDeviceMode",
+                                #                 "getRazerUrls",
+                                #                 "setDeviceMode"
+                                #                 ...]
+                                #              }
+                                #       ]
 
 # Set the keyboard's color to a static color
 green = Razer::RGB.from(:razer_green)
