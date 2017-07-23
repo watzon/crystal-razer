@@ -1,7 +1,7 @@
 require "dbus"
 require "dbus/introspect"
 require "json"
-require "./razer/*"
+require "./lib/*"
 
 module Razer
   class DeviceManager

@@ -18,7 +18,6 @@ module Razer::Devices
     @urls : Hash(String, JSON::Type)?
     @available_features : Hash(String, Array(String))
     @capabilities : Hash(Symbol, Bool)
-    @fx : RazerFX
 
     def initialize(@serial : String, @vid_pid = nil, daemon_dbus = nil)
       if daemon_dbus.nil?

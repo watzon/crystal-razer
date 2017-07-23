@@ -1,4 +1,4 @@
-# LibRazer
+# crystal-razer
 
 Facilitate control of your Razer chroma devices.
 
@@ -8,14 +8,14 @@ Add this to your application's `shard.yml`:
 
 ```yaml
 dependencies:
-  librazer:
-    github: watzon/librazer
+  crystal-razer:
+    github: watzon/crystal-razer
 ```
 
 ## Usage
 
 ```crystal
-require "librazer"
+require "crystal-razer"
 
 # Create a new DeviceManager instance
 dm = Razer::DeviceManager.new
@@ -51,7 +51,7 @@ Just submit a PR if you want to add any features. You can check '[terrycain/raze
 
 ## Contributing
 
-1. Fork it ( https://github.com/watzon/librazer/fork )
+1. Fork it ( https://github.com/watzon/crystal-razer/fork )
 2. Create your feature branch (git checkout -b my-new-feature)
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)
