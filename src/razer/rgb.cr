@@ -26,6 +26,13 @@ module Razer
       end
     end
 
+    def set(red, green, blue)
+      @red = red
+      @green = green
+      @blue = blue
+      self
+    end
+
     def to_a
       [@red, @green, @blue]
     end
