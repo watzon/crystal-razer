@@ -7,7 +7,7 @@ require "../interface"
 module Razer::Devices
   # Base device class for all razer devices
   class RazerDevice
-    getter :name, :type, :firmware_version, :driver_version, :serial, :capabilities
+    getter :name, :type, :firmware_version, :driver_version, :serial, :capabilities, :fx
 
     @vid_pid : Array(DBus::Type)?
     @dbus_interfaces : Hash(Symbol, Razer::Interface)
@@ -18,6 +18,7 @@ module Razer::Devices
     @urls : Hash(String, JSON::Type)?
     @available_features : Hash(String, Array(String))
     @capabilities : Hash(Symbol, Bool)
+    @fx : RazerFX
 
     def initialize(@serial : String, @vid_pid = nil, daemon_dbus = nil)
       if daemon_dbus.nil?
@@ -101,6 +102,7 @@ module Razer::Devices
         :lighting_backlight        => has_feature("razer.device.lighting.backlight"),
         :lighting_backlight_active => has_feature("razer.device.lighting.backlight", "setBacklightActive"),
       }
+      @fx = RazerFX.new(@serial, @capabilities, @dbus)
     end
 
     def has(capability : Symbol) : Bool

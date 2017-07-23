@@ -16,13 +16,38 @@ dependencies:
 
 ```crystal
 require "librazer"
+
+# Create a new DeviceManager instance
+dm = Razer::DeviceManager.new
+
+# List connected Razer devices
+pp dm.devices #=> [#<Razer::Devices::RazerKeyboard:0x561974a06f80 ...]
+
+# Select a particular device
+kbd = dm.devices[0].as(Razer::Devices.Keyboard) # Not ideal having to use `.as()`, but it's all that works for now
+
+# List available features for the device
+pp kbd.get_available_features #=>   [#<Razer::Devices::RazerKeyboard:0x563b4e057f80
+                                        @available_features=
+                                           {"razer.device.misc" =>
+                                             ["getSerial",
+                                              "suspendDevice",
+                                              "getDeviceMode",
+                                              "getRazerUrls",
+                                              "setDeviceMode"
+                                              ...]
+                                           }
+                                    ]
+
+# Set the keyboard's color to a static color
+green = Razer::RGB.from(:razer_green)
+kbd.fx.static(green)
 ```
 
-TODO: Write usage instructions here
 
 ## Development
 
-TODO: Write development instructions here
+Just submit a PR if you want to add any features. You can check '[terrycain/razer-drivers](https://github.com/terrycain/razer-drivers)' for help, as that is the library that I got everything from.
 
 ## Contributing
 

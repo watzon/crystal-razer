@@ -1,6 +1,5 @@
 require "dbus"
 require "dbus/introspect"
-require "./interface"
 require "./devices/*"
 
 DEVICE_MAP = {

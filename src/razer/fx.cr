@@ -31,7 +31,7 @@ module Razer
       @lighting_dbus = Interface.new(@dbus, "razer.device.lighting.chroma")
 
       # Make sure all dimensions exist. If any value in matrix_dims is falsy, returns false
-      if has(:lighting_led_matrix) && matrix_dims.any? { |i| !!i }
+      if has(:lighting_led_matrix) && matrix_dims.any? { |i| i > -1 }
         @advanced = RazerAdvancedFX.new(serial, @capabilities, @dbus, matrix_dims)
       end
 
